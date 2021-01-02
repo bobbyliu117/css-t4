@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center;justify-content: space-between;">
+      <a href="https://google.com" style="display: flex;align-items: center;min-height: 54px; margin-left: 12px;">
+        <img src="chives.png" alt="LOGO" style="width: 24px;margin-right: 4px;">
+        <p>LOGO</p>
+      </a>
+      <div id="menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+    <nav id="nav">
+      <a href="#sec1" class="nav-link">SEC1</a>
+      <a href="#sec2" class="nav-link">SEC2</a>
+      <a href="#sec3" class="nav-link">SEC3</a>
+    </nav>
+  </header>
+  <main>
+    <section id="sec1" style="background-color: lightblue;">SEC1</section>
+    <section id="sec2" style="background-color: lightcoral;">SEC2</section>
+    <section id="sec3" style="background-color: lightseagreen;">SEC3</section>
+  </main>
+
+  <script>
+    const menu = document.getElementById("menu");
+    const nav = document.getElementById("nav");
+    nav.childNodes.forEach(node => node.addEventListener("click", () => toggleNav()));
+
+    menu.addEventListener("click", () => toggleNav());
+    function toggleNav() {
+      if (nav.classList.contains("active")) {
+        nav.classList.remove("active");
+      } else {
+        nav.classList.add("active");
+      }
+    }
+  </script>
+</body>
+</html>
